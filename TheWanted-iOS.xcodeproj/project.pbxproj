@@ -76,6 +76,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2EFDD61C114B6D00CB6F73 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CEE063C11C11486A007C02E9 /* AppDelegate.swift */,
+				CEE063CB1C11486A007C02E9 /* Assets.xcassets */,
+				CEE063D01C11486A007C02E9 /* Info.plist */,
+				CEE063CD1C11486A007C02E9 /* LaunchScreen.storyboard */,
+				CEE063C81C11486A007C02E9 /* TheWanted_iOS.xcdatamodeld */,
+			);
+			name = SupportFiles;
+			sourceTree = "<group>";
+		};
+		CE2EFDD71C114BA500CB6F73 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CE2EFDD81C114BAD00CB6F73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CE2EFDD91C114BB700CB6F73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CEE063B51C11486A007C02E9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +132,12 @@
 		CEE063C01C11486A007C02E9 /* TheWanted-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CEE063C11C11486A007C02E9 /* AppDelegate.swift */,
-				CEE063C31C11486A007C02E9 /* ViewController.swift */,
+				CE2EFDD91C114BB700CB6F73 /* Model */,
+				CE2EFDD81C114BAD00CB6F73 /* View */,
+				CE2EFDD71C114BA500CB6F73 /* Controller */,
 				CEE063C51C11486A007C02E9 /* Main.storyboard */,
-				CEE063CB1C11486A007C02E9 /* Assets.xcassets */,
-				CEE063CD1C11486A007C02E9 /* LaunchScreen.storyboard */,
-				CEE063D01C11486A007C02E9 /* Info.plist */,
-				CEE063C81C11486A007C02E9 /* TheWanted_iOS.xcdatamodeld */,
+				CEE063C31C11486A007C02E9 /* ViewController.swift */,
+				CE2EFDD61C114B6D00CB6F73 /* SupportFiles */,
 			);
 			path = "TheWanted-iOS";
 			sourceTree = "<group>";
@@ -402,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "TheWanted-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.playr2.TheWanted-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "TheWanted-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.playr2.TheWanted-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +520,7 @@
 				CEE063EB1C11486A007C02E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEE063EC1C11486A007C02E9 /* Build configuration list for PBXNativeTarget "TheWanted-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +529,7 @@
 				CEE063EE1C11486A007C02E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEE063EF1C11486A007C02E9 /* Build configuration list for PBXNativeTarget "TheWanted-iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +538,7 @@
 				CEE063F11C11486A007C02E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
