@@ -9,14 +9,29 @@
 import UIKit
 import CoreData
 
+import Fabric
+import DigitsKit
+import Crashlytics
+
+import CocoaLumberjack
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let api = Api.sharedInstance
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        /// Add Xcode console To CocoaLumberjack Logger
+        DDLog.addLogger(DDTTYLogger.sharedInstance())
+        DDLogVerbose("AppDelegate.application()");
+        
+        Fabric.with([Crashlytics.self, Digits.self])
+
+        
         return true
     }
 

@@ -7,63 +7,53 @@
 //
 
 import UIKit
-import CoreLocation
-import Socket_IO_Client_Swift
 
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController {
 
     
     let wheelView = WheelView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     
-    let locationManager = CLLocationManager()
+    let mapView = MapView()
     
-    var socket:SocketIOClient = SocketIOClient(socketURL: "localhost:3000", options: [.Log(true), .ForcePolling(true)])
+    let locationManager = TWLocationManager.sharedInstance
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager.startUpdatingLocation()
         
-        self.socket.on("connect") {data, ack in
-            print("socket connected")
-        }
-        
-        socket.connect()
-        
-        
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 10
-        checkCoreLocationPermission()
-        
+        setupMapView()
         setupWheelView()
-        
-        
-        
-        
-//        self.socket!.on("currentAmount") {data, ack in
-//            if let cur = data[0] as? Double {
-//                self.socket.emitWithAck("canUpdate", cur)(timeoutAfter: 0) {data in
-//                    socket.emit("update", ["amount": cur + 2.50])
-//                }
-//                
-//                ack.with("Got your currentAmount", "dude")
-//            }
-//        }
-        
-        
-        
-        
     }
     
     override func viewWillDisappear(animated: Bool) {
         locationManager.stopUpdatingLocation()
-        socket.disconnect()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
+    }
+    
+    
+    func setupMapView() {
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(mapView)
+        
+        let topConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        
+        let rightConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
+        
+        let bottomConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        
+        let leftConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
+        
+        view.addConstraint(topConstraint)
+        view.addConstraint(rightConstraint)
+        view.addConstraint(bottomConstraint)
+        view.addConstraint(leftConstraint)
     }
 
     
@@ -85,35 +75,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         view.addConstraint(widthConstraint)
         view.addConstraint(heightConstraint)
         
-    }
-    
-    
-    func checkCoreLocationPermission() {
-        switch CLLocationManager.authorizationStatus() {
-        
-        case .AuthorizedWhenInUse:
-            locationManager.startUpdatingLocation()
-            break
-            
-        case .NotDetermined:
-            locationManager.requestWhenInUseAuthorization()
-            break
-            
-        case .Restricted:
-            print("Location Restricted")
-            break
-            
-        default:
-            break
-        }
-    }
-    
-    
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
-        print("Location:", newLocation.coordinate.latitude, newLocation.coordinate.longitude)
-        let pos = ["lat": newLocation.coordinate.latitude, "lon": newLocation.coordinate.longitude]
-        
-        self.socket.emit("playerUpdate", pos)
     }
 
 }

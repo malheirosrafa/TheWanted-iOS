@@ -9,7 +9,6 @@
 import UIKit
 import Darwin
 
-@IBDesignable
 class WheelView: UIView {
     
     override init(frame: CGRect) {

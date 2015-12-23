@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>pt</string>
 	<key>CFBundleDisplayName</key>
 	<string></string>
 	<key>CFBundleExecutable</key>
@@ -22,6 +22,31 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>ed0b4baea872ddd3f462d79f9c763c41d6101abd</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>ObAypDdtkEsT8VFizetkUimik</string>
+					<key>consumerSecret</key>
+					<string>1muNumD7CQ5xAO8jvaAV5l6PV0ktaQz238RQpcEcnUhRqQeRU6</string>
+				</dict>
+				<key>KitName</key>
+				<string>Digits</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
@@ -30,7 +55,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>localhost</key>
+			<key>192.168.0.9.xip.io</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
