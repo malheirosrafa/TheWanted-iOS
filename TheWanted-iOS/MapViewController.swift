@@ -19,10 +19,16 @@ class MapViewController: UIViewController {
     let locationManager = TWLocationManager.sharedInstance
     
     
+    let notificationCenter = NSNotificationCenter.defaultCenter()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.startUpdatingLocation()
+        
+        
+        notificationCenter.addObserver(self, selector: "onSpawnableSpawn:", name: TWNotification.Spawn, object: nil)
         
         setupMapView()
         setupWheelView()
@@ -42,13 +48,14 @@ class MapViewController: UIViewController {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(mapView)
         
-        let topConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        
+        let topConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0)
         
         let rightConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
         
         let bottomConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         
-        let leftConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
+        let leftConstraint = NSLayoutConstraint(item: mapView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
         
         view.addConstraint(topConstraint)
         view.addConstraint(rightConstraint)
@@ -75,6 +82,12 @@ class MapViewController: UIViewController {
         view.addConstraint(widthConstraint)
         view.addConstraint(heightConstraint)
         
+    }
+    
+    @objc func onSpawnableSpawn(notification: NSNotification)
+    {
+        let marker = (notification.object as! TWPlayer).marker
+        mapView.addMarker(marker)
     }
 
 }

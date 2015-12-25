@@ -18,7 +18,7 @@ class TWLocationManager: NSObject, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     
-    let socket = Api.sharedInstance.socket
+    let socket = TWServer.sharedInstance.socket
     
     
     override private init()
@@ -74,7 +74,12 @@ class TWLocationManager: NSObject, CLLocationManagerDelegate {
         
         let data:Dictionary<String, NSObject> = ["lat": newLocation.coordinate.latitude, "lon": newLocation.coordinate.longitude]
         
-        socket.emit(TWActionableNotification.Move, data)
+        TWMe.sharedInstance.player.position.lat = newLocation.coordinate.latitude
+        TWMe.sharedInstance.player.position.lon = newLocation.coordinate.longitude
+        
+        socket.emit(TWNotification.Move, data)
+        
+        
         
         //        self.socket!.on("currentAmount") {data, ack in
         //            if let cur = data[0] as? Double {

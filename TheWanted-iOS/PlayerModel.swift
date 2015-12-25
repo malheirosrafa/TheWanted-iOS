@@ -10,12 +10,11 @@ import CocoaLumberjack
 
 class PlayerModel: AnyObject {
     
-    let id: Int
+    var id: String?
     var name: String?
     let position: LatLonModel = LatLonModel()
     
-    init(id: Int) {
-        DDLogVerbose("PlayerModel.init(id: \(id))")
-        self.id = id
+    init() {
+        DDLogVerbose("PlayerModel.init()")
     }
 }

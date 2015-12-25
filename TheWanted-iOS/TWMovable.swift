@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TWMovable
+protocol TWMovable: TWNotificable
 {
     func moveTo(position: CGPoint)
 }

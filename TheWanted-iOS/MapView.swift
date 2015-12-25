@@ -26,16 +26,19 @@ class MapView: UIView {
 
     func drawMap()
     {
-        let marker = TWPlayerMarkerView()
-        self.addSubview(marker)
-        
-        
         setupBackground()
     }
     
     func setupBackground()
     {
-        self.layer.backgroundColor = UIColor.orangeColor().CGColor
+//        self.layer.backgroundColor = UIColor.orangeColor().CGColor
+    }
+    
+    
+    
+    func addMarker(marker:UIView)
+    {
+        self.addSubview(marker)
     }
     
     

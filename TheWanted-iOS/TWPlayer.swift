@@ -6,16 +6,21 @@
 //  Copyright © 2015 playr2. All rights reserved.
 //
 
-class TWPlayer: TWActionable {
+import UIKit
+import CocoaLumberjack
+
+class TWPlayer: TWActionable, TWMovable, TWSpawnable {
     
-    
-    var marker: TWMovable = TWPlayerMarkerView()
+    var marker = TWPlayerMarkerView()
     
     var actionList:[TWAction] = [TWAction]()
+    
+    let notificationCenter = NSNotificationCenter.defaultCenter()
     
     init()
     {
         
+        setupMarker()
     }
     
     func setupMarker()
@@ -23,6 +28,16 @@ class TWPlayer: TWActionable {
         
     }
     
-
+    
+    func moveTo(position: CGPoint)
+    {
+        marker.layer.position = position
+    }
+    
+    func spawn()
+    {
+        notificationCenter.postNotificationName(TWNotification.Spawn, object: self)
+    }
+    
     
 }

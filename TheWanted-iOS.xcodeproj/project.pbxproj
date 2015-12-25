@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		58AD4A3E038C48AEA2B34844 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13DB61E6162F3174DBACA593 /* Pods.framework */; };
+		75122BEE1C2B81C700D21AE6 /* TWSpawnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75122BED1C2B81C700D21AE6 /* TWSpawnable.swift */; };
+		75122BF01C2B890D00D21AE6 /* TWNotificable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75122BEF1C2B890D00D21AE6 /* TWNotificable.swift */; };
 		752931901C254E7E003156BB /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7529318F1C254E7E003156BB /* SessionManager.swift */; };
 		752931921C254F08003156BB /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752931911C254F08003156BB /* PlayerModel.swift */; };
 		752931941C2551CD003156BB /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752931931C2551CD003156BB /* UserNotification.swift */; };
-		75BC91B51C253427006972AE /* TWActionableNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC91B41C253427006972AE /* TWActionableNotification.swift */; };
+		75BC91B51C253427006972AE /* TWNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC91B41C253427006972AE /* TWNotification.swift */; };
+		75E9771B1C2CBC5300E84344 /* TWMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9771A1C2CBC5300E84344 /* TWMe.swift */; };
 		75FBED331C29F1E20056661E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED321C29F1E20056661E /* MapView.swift */; };
-		75FBED351C2A425C0056661E /* TWActionableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED341C2A425C0056661E /* TWActionableManager.swift */; };
+		75FBED351C2A425C0056661E /* TWNotificableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED341C2A425C0056661E /* TWNotificableManager.swift */; };
 		75FBED371C2A44C50056661E /* TWActionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED361C2A44C50056661E /* TWActionable.swift */; };
 		75FBED3A1C2A466B0056661E /* TWPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED391C2A466B0056661E /* TWPlayer.swift */; };
 		75FBED3C1C2A5C810056661E /* TWAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED3B1C2A5C810056661E /* TWAction.swift */; };
@@ -25,7 +28,7 @@
 		CE3B4EAC1C1D3C760015A70E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3B4EAB1C1D3C760015A70E /* CoreLocation.framework */; };
 		CE3B4EAE1C1E78410015A70E /* LatLonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B4EAD1C1E78410015A70E /* LatLonModel.swift */; };
 		CE7A6B4D1C1E90AB009784A8 /* TWLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A6B4C1C1E90AB009784A8 /* TWLocationManager.swift */; };
-		CE7A6B501C1E917A009784A8 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A6B4F1C1E917A009784A8 /* Api.swift */; };
+		CE7A6B501C1E917A009784A8 /* TWServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A6B4F1C1E917A009784A8 /* TWServer.swift */; };
 		CEE063C21C11486A007C02E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063C11C11486A007C02E9 /* AppDelegate.swift */; };
 		CEE063C41C11486A007C02E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063C31C11486A007C02E9 /* MapViewController.swift */; };
 		CEE063C71C11486A007C02E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE063C51C11486A007C02E9 /* Main.storyboard */; };
@@ -54,15 +57,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04FEB06FD4902EB973EC3BC2 /* Pods-TheWanted-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheWanted-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheWanted-iOS/Pods-TheWanted-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		13DB61E6162F3174DBACA593 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B19B6E82445A8CA4C08CD9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		30CC5D470E1557D0C2864208 /* Pods-TheWanted-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheWanted-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheWanted-iOS/Pods-TheWanted-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5721997E86FAC807DC14EA5F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		75122BED1C2B81C700D21AE6 /* TWSpawnable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWSpawnable.swift; sourceTree = "<group>"; };
+		75122BEF1C2B890D00D21AE6 /* TWNotificable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWNotificable.swift; sourceTree = "<group>"; };
 		7529318F1C254E7E003156BB /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		752931911C254F08003156BB /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		752931931C2551CD003156BB /* UserNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotification.swift; sourceTree = "<group>"; };
-		75BC91B41C253427006972AE /* TWActionableNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWActionableNotification.swift; sourceTree = "<group>"; };
+		75BC91B41C253427006972AE /* TWNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWNotification.swift; sourceTree = "<group>"; };
+		75E9771A1C2CBC5300E84344 /* TWMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWMe.swift; sourceTree = "<group>"; };
 		75FBED321C29F1E20056661E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		75FBED341C2A425C0056661E /* TWActionableManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWActionableManager.swift; sourceTree = "<group>"; };
+		75FBED341C2A425C0056661E /* TWNotificableManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWNotificableManager.swift; sourceTree = "<group>"; };
 		75FBED361C2A44C50056661E /* TWActionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWActionable.swift; sourceTree = "<group>"; };
 		75FBED391C2A466B0056661E /* TWPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWPlayer.swift; sourceTree = "<group>"; };
 		75FBED3B1C2A5C810056661E /* TWAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWAction.swift; sourceTree = "<group>"; };
@@ -73,7 +81,7 @@
 		CE3B4EAB1C1D3C760015A70E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CE3B4EAD1C1E78410015A70E /* LatLonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatLonModel.swift; sourceTree = "<group>"; };
 		CE7A6B4C1C1E90AB009784A8 /* TWLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLocationManager.swift; sourceTree = "<group>"; };
-		CE7A6B4F1C1E917A009784A8 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		CE7A6B4F1C1E917A009784A8 /* TWServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWServer.swift; sourceTree = "<group>"; };
 		CEE063BE1C11486A007C02E9 /* TheWanted-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheWanted-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE063C11C11486A007C02E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE063C31C11486A007C02E9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +132,8 @@
 			children = (
 				26B19B6E82445A8CA4C08CD9 /* Pods.debug.xcconfig */,
 				5721997E86FAC807DC14EA5F /* Pods.release.xcconfig */,
+				04FEB06FD4902EB973EC3BC2 /* Pods-TheWanted-iOS.debug.xcconfig */,
+				30CC5D470E1557D0C2864208 /* Pods-TheWanted-iOS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -140,22 +150,25 @@
 			isa = PBXGroup;
 			children = (
 				75FBED421C2A7FA00056661E /* Constant */,
-				75FBED3F1C2A5EE00056661E /* Protocol & enum */,
+				75FBED3F1C2A5EE00056661E /* Protocol */,
 				75FBED401C2A5F7E0056661E /* View */,
 				75FBED411C2A60E50056661E /* Manager */,
 				75FBED391C2A466B0056661E /* TWPlayer.swift */,
+				75E9771A1C2CBC5300E84344 /* TWMe.swift */,
+				CE7A6B4F1C1E917A009784A8 /* TWServer.swift */,
 			);
 			name = TWComponents;
 			sourceTree = "<group>";
 		};
-		75FBED3F1C2A5EE00056661E /* Protocol & enum */ = {
+		75FBED3F1C2A5EE00056661E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				75FBED3B1C2A5C810056661E /* TWAction.swift */,
-				75FBED3D1C2A5ED40056661E /* TWMovable.swift */,
+				75122BEF1C2B890D00D21AE6 /* TWNotificable.swift */,
 				75FBED361C2A44C50056661E /* TWActionable.swift */,
+				75122BED1C2B81C700D21AE6 /* TWSpawnable.swift */,
+				75FBED3D1C2A5ED40056661E /* TWMovable.swift */,
 			);
-			name = "Protocol & enum";
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 		75FBED401C2A5F7E0056661E /* View */ = {
@@ -169,7 +182,7 @@
 		75FBED411C2A60E50056661E /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				75FBED341C2A425C0056661E /* TWActionableManager.swift */,
+				75FBED341C2A425C0056661E /* TWNotificableManager.swift */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -177,7 +190,8 @@
 		75FBED421C2A7FA00056661E /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				75BC91B41C253427006972AE /* TWActionableNotification.swift */,
+				75BC91B41C253427006972AE /* TWNotification.swift */,
+				75FBED3B1C2A5C810056661E /* TWAction.swift */,
 			);
 			name = Constant;
 			sourceTree = "<group>";
@@ -220,14 +234,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		CE7A6B4B1C1E9038009784A8 /* Api */ = {
-			isa = PBXGroup;
-			children = (
-				CE7A6B4F1C1E917A009784A8 /* Api.swift */,
-			);
-			name = Api;
-			sourceTree = "<group>";
-		};
 		CE7A6B4E1C1E913A009784A8 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,7 +272,6 @@
 				CEE063C51C11486A007C02E9 /* Main.storyboard */,
 				75BC91B31C2533F1006972AE /* Constant */,
 				75FBED381C2A45FB0056661E /* TWComponents */,
-				CE7A6B4B1C1E9038009784A8 /* Api */,
 				CE2EFDD91C114BB700CB6F73 /* Model */,
 				CE2EFDD81C114BAD00CB6F73 /* View */,
 				CE2EFDD71C114BA500CB6F73 /* Controller */,
@@ -491,7 +496,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheWanted-iOS/Pods-TheWanted-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -501,19 +506,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7A6B501C1E917A009784A8 /* Api.swift in Sources */,
+				CE7A6B501C1E917A009784A8 /* TWServer.swift in Sources */,
 				75FBED3C1C2A5C810056661E /* TWAction.swift in Sources */,
 				CEE063CA1C11486A007C02E9 /* TheWanted_iOS.xcdatamodeld in Sources */,
-				75BC91B51C253427006972AE /* TWActionableNotification.swift in Sources */,
+				75122BEE1C2B81C700D21AE6 /* TWSpawnable.swift in Sources */,
+				75BC91B51C253427006972AE /* TWNotification.swift in Sources */,
 				CE7A6B4D1C1E90AB009784A8 /* TWLocationManager.swift in Sources */,
 				CEE063C41C11486A007C02E9 /* MapViewController.swift in Sources */,
 				CE2EFDDF1C128A9C00CB6F73 /* WheelView.swift in Sources */,
 				752931921C254F08003156BB /* PlayerModel.swift in Sources */,
 				75FBED371C2A44C50056661E /* TWActionable.swift in Sources */,
-				75FBED351C2A425C0056661E /* TWActionableManager.swift in Sources */,
+				75E9771B1C2CBC5300E84344 /* TWMe.swift in Sources */,
+				75FBED351C2A425C0056661E /* TWNotificableManager.swift in Sources */,
 				75FBED331C29F1E20056661E /* MapView.swift in Sources */,
 				CEE063C21C11486A007C02E9 /* AppDelegate.swift in Sources */,
 				CE2EFDDB1C114F1800CB6F73 /* TWPlayerMarkerView.swift in Sources */,
+				75122BF01C2B890D00D21AE6 /* TWNotificable.swift in Sources */,
 				752931941C2551CD003156BB /* UserNotification.swift in Sources */,
 				75FBED3E1C2A5ED40056661E /* TWMovable.swift in Sources */,
 				CE3B4EAE1C1E78410015A70E /* LatLonModel.swift in Sources */,
@@ -657,7 +665,7 @@
 		};
 		CEE063EA1C11486A007C02E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26B19B6E82445A8CA4C08CD9 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 04FEB06FD4902EB973EC3BC2 /* Pods-TheWanted-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -671,7 +679,7 @@
 		};
 		CEE063EB1C11486A007C02E9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5721997E86FAC807DC14EA5F /* Pods.release.xcconfig */;
+			baseConfigurationReference = 30CC5D470E1557D0C2864208 /* Pods-TheWanted-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

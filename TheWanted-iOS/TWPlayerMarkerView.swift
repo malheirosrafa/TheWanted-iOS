@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TWPlayerMarkerView: UIView, TWMovable {
+class TWPlayerMarkerView: UIView {
 
     let bgColor:UIColor = UIColor.init(red: 0.15, green: 0.34, blue: 0.20, alpha: 1.0)
     
@@ -29,12 +29,13 @@ class TWPlayerMarkerView: UIView, TWMovable {
     {
         self.backgroundColor = UIColor.clearColor()
         
-        self.frame = CGRect(x: 100, y: 100, width: 20, height: 20)
+        self.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         
-        let singleFingerTap = UITapGestureRecognizer(target: self, action: "onTap:")
-
-        addGestureRecognizer(singleFingerTap)
+        self.layer.anchorPoint = CGPointMake(0.5, 0.5);
+        self.layer.position = CGPointMake(0.0, 0.0)
         
+        let singleFingerTap = UITapGestureRecognizer(target: self, action: "onTapMarker:")
+        self.addGestureRecognizer(singleFingerTap)
     }
     
     
@@ -53,15 +54,10 @@ class TWPlayerMarkerView: UIView, TWMovable {
         circle.fill()
     }
     
-    func onTap(gestureRecognizer: UIGestureRecognizer) {
+    
+    
+    func onTapMarker(gestureRecognizer: UIGestureRecognizer) {
         print("tap")
-        moveTo(CGPoint(x: 10, y: 100))
     }
-    
-    
-    func moveTo(position: CGPoint) {
-        self.layer.position = position
-    }
-    
 
 }
