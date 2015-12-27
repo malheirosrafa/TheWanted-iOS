@@ -9,35 +9,44 @@
 import UIKit
 import CocoaLumberjack
 
-class TWPlayer: TWActionable, TWMovable, TWSpawnable {
+class TWPlayer: NSObject {
     
-    var marker = TWPlayerMarkerView()
     
-    var actionList:[TWAction] = [TWAction]()
+    
+    // MARK:- Properties
+    
+    
+    let _id: String
+    
+    var id: String {
+        get {
+            return self._id
+        }
+    }
+    
+    
+    var name: String?
+    
+    var position: TWGeoPoint?
+    
     
     let notificationCenter = NSNotificationCenter.defaultCenter()
     
-    init()
-    {
-        
-        setupMarker()
-    }
-    
-    func setupMarker()
-    {
-        
-    }
     
     
-    func moveTo(position: CGPoint)
+    // MARK:- Initializers
+    
+    
+    init(id: String)
     {
-        marker.layer.position = position
+        self._id = id
     }
     
-    func spawn()
-    {
-        notificationCenter.postNotificationName(TWNotification.Spawn, object: self)
-    }
+    
+    
+    // MARK:- Methods
+    
+    
     
     
 }

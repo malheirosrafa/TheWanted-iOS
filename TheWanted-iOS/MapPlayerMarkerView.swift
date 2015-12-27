@@ -1,5 +1,5 @@
 //
-//  PlayerMarkerView.swift
+//  MapPlayerMarkerView.swift
 //  TheWanted-iOS
 //
 //  Created by Rafael Malheiros on 04/12/15.
@@ -8,18 +8,23 @@
 
 import UIKit
 
-class TWPlayerMarkerView: UIView {
+class MapPlayerMarkerView: UIView {
+    
+    
+    var playerId: String?
 
     let bgColor:UIColor = UIColor.init(red: 0.15, green: 0.34, blue: 0.20, alpha: 1.0)
     
     
-    override init(frame: CGRect) {
+    override init(frame: CGRect)
+    {
         super.init(frame: frame)
         
         setupView()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         super.init(coder: aDecoder)
         
         setupView()
@@ -33,13 +38,11 @@ class TWPlayerMarkerView: UIView {
         
         self.layer.anchorPoint = CGPointMake(0.5, 0.5);
         self.layer.position = CGPointMake(0.0, 0.0)
-        
-        let singleFingerTap = UITapGestureRecognizer(target: self, action: "onTapMarker:")
-        self.addGestureRecognizer(singleFingerTap)
     }
     
     
-    override func drawRect(rect: CGRect) {
+    override func drawRect(rect: CGRect)
+    {
         
         let viewWidth:Float = Float(self.frame.width)
         let viewHeight:Float = Float(self.frame.height)
@@ -52,12 +55,6 @@ class TWPlayerMarkerView: UIView {
         bgColor.setFill()
         
         circle.fill()
-    }
-    
-    
-    
-    func onTapMarker(gestureRecognizer: UIGestureRecognizer) {
-        print("tap")
     }
 
 }

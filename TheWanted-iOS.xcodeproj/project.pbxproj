@@ -8,26 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		58AD4A3E038C48AEA2B34844 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13DB61E6162F3174DBACA593 /* Pods.framework */; };
-		75122BEE1C2B81C700D21AE6 /* TWSpawnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75122BED1C2B81C700D21AE6 /* TWSpawnable.swift */; };
-		75122BF01C2B890D00D21AE6 /* TWNotificable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75122BEF1C2B890D00D21AE6 /* TWNotificable.swift */; };
-		752931901C254E7E003156BB /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7529318F1C254E7E003156BB /* SessionManager.swift */; };
-		752931921C254F08003156BB /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752931911C254F08003156BB /* PlayerModel.swift */; };
-		752931941C2551CD003156BB /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752931931C2551CD003156BB /* UserNotification.swift */; };
-		75BC91B51C253427006972AE /* TWNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC91B41C253427006972AE /* TWNotification.swift */; };
-		75E9771B1C2CBC5300E84344 /* TWMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9771A1C2CBC5300E84344 /* TWMe.swift */; };
+		75DCB0981C2D5CFB00EE041F /* TWLocalPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCB0971C2D5CFB00EE041F /* TWLocalPlayer.swift */; };
+		75DCB09A1C2D7FCD00EE041F /* TWLocalPlayerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCB0991C2D7FCD00EE041F /* TWLocalPlayerNotification.swift */; };
+		75DCB09D1C2D81EC00EE041F /* TWRemotePlayerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCB09C1C2D81EC00EE041F /* TWRemotePlayerNotification.swift */; };
+		75DCB09F1C2D833400EE041F /* TWRemotePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCB09E1C2D833400EE041F /* TWRemotePlayer.swift */; };
+		75DCB0A11C2E071E00EE041F /* TWLocalPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCB0A01C2E071E00EE041F /* TWLocalPlayerManager.swift */; };
 		75FBED331C29F1E20056661E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED321C29F1E20056661E /* MapView.swift */; };
-		75FBED351C2A425C0056661E /* TWNotificableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED341C2A425C0056661E /* TWNotificableManager.swift */; };
-		75FBED371C2A44C50056661E /* TWActionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED361C2A44C50056661E /* TWActionable.swift */; };
+		75FBED351C2A425C0056661E /* TWRemotePlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED341C2A425C0056661E /* TWRemotePlayerManager.swift */; };
 		75FBED3A1C2A466B0056661E /* TWPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED391C2A466B0056661E /* TWPlayer.swift */; };
-		75FBED3C1C2A5C810056661E /* TWAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED3B1C2A5C810056661E /* TWAction.swift */; };
-		75FBED3E1C2A5ED40056661E /* TWMovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED3D1C2A5ED40056661E /* TWMovable.swift */; };
 		79F279487D5E4BE27CF7D726 /* Pods_TheWanted_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BCE57AF7DF23EE16FE6571 /* Pods_TheWanted_iOS.framework */; };
-		CE2EFDDB1C114F1800CB6F73 /* TWPlayerMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFDDA1C114F1800CB6F73 /* TWPlayerMarkerView.swift */; };
+		CE2EFDDB1C114F1800CB6F73 /* MapPlayerMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFDDA1C114F1800CB6F73 /* MapPlayerMarkerView.swift */; };
 		CE2EFDDD1C1281A000CB6F73 /* WheelActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFDDC1C1281A000CB6F73 /* WheelActionButton.swift */; };
 		CE2EFDDF1C128A9C00CB6F73 /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFDDE1C128A9C00CB6F73 /* WheelView.swift */; };
 		CE3B4EAC1C1D3C760015A70E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3B4EAB1C1D3C760015A70E /* CoreLocation.framework */; };
-		CE3B4EAE1C1E78410015A70E /* LatLonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B4EAD1C1E78410015A70E /* LatLonModel.swift */; };
-		CE7A6B4D1C1E90AB009784A8 /* TWLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A6B4C1C1E90AB009784A8 /* TWLocationManager.swift */; };
+		CE3B4EAE1C1E78410015A70E /* TWGeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B4EAD1C1E78410015A70E /* TWGeoPoint.swift */; };
 		CE7A6B501C1E917A009784A8 /* TWServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A6B4F1C1E917A009784A8 /* TWServer.swift */; };
 		CEE063C21C11486A007C02E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063C11C11486A007C02E9 /* AppDelegate.swift */; };
 		CEE063C41C11486A007C02E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE063C31C11486A007C02E9 /* MapViewController.swift */; };
@@ -62,25 +56,19 @@
 		26B19B6E82445A8CA4C08CD9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		30CC5D470E1557D0C2864208 /* Pods-TheWanted-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheWanted-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheWanted-iOS/Pods-TheWanted-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5721997E86FAC807DC14EA5F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		75122BED1C2B81C700D21AE6 /* TWSpawnable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWSpawnable.swift; sourceTree = "<group>"; };
-		75122BEF1C2B890D00D21AE6 /* TWNotificable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWNotificable.swift; sourceTree = "<group>"; };
-		7529318F1C254E7E003156BB /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		752931911C254F08003156BB /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
-		752931931C2551CD003156BB /* UserNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotification.swift; sourceTree = "<group>"; };
-		75BC91B41C253427006972AE /* TWNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWNotification.swift; sourceTree = "<group>"; };
-		75E9771A1C2CBC5300E84344 /* TWMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWMe.swift; sourceTree = "<group>"; };
+		75DCB0971C2D5CFB00EE041F /* TWLocalPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLocalPlayer.swift; sourceTree = "<group>"; };
+		75DCB0991C2D7FCD00EE041F /* TWLocalPlayerNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLocalPlayerNotification.swift; sourceTree = "<group>"; };
+		75DCB09C1C2D81EC00EE041F /* TWRemotePlayerNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWRemotePlayerNotification.swift; sourceTree = "<group>"; };
+		75DCB09E1C2D833400EE041F /* TWRemotePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWRemotePlayer.swift; sourceTree = "<group>"; };
+		75DCB0A01C2E071E00EE041F /* TWLocalPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLocalPlayerManager.swift; sourceTree = "<group>"; };
 		75FBED321C29F1E20056661E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		75FBED341C2A425C0056661E /* TWNotificableManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWNotificableManager.swift; sourceTree = "<group>"; };
-		75FBED361C2A44C50056661E /* TWActionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWActionable.swift; sourceTree = "<group>"; };
+		75FBED341C2A425C0056661E /* TWRemotePlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWRemotePlayerManager.swift; sourceTree = "<group>"; };
 		75FBED391C2A466B0056661E /* TWPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWPlayer.swift; sourceTree = "<group>"; };
-		75FBED3B1C2A5C810056661E /* TWAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWAction.swift; sourceTree = "<group>"; };
-		75FBED3D1C2A5ED40056661E /* TWMovable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWMovable.swift; sourceTree = "<group>"; };
-		CE2EFDDA1C114F1800CB6F73 /* TWPlayerMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWPlayerMarkerView.swift; sourceTree = "<group>"; };
+		CE2EFDDA1C114F1800CB6F73 /* MapPlayerMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPlayerMarkerView.swift; sourceTree = "<group>"; };
 		CE2EFDDC1C1281A000CB6F73 /* WheelActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelActionButton.swift; sourceTree = "<group>"; };
 		CE2EFDDE1C128A9C00CB6F73 /* WheelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 		CE3B4EAB1C1D3C760015A70E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		CE3B4EAD1C1E78410015A70E /* LatLonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatLonModel.swift; sourceTree = "<group>"; };
-		CE7A6B4C1C1E90AB009784A8 /* TWLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLocationManager.swift; sourceTree = "<group>"; };
+		CE3B4EAD1C1E78410015A70E /* TWGeoPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWGeoPoint.swift; sourceTree = "<group>"; };
 		CE7A6B4F1C1E917A009784A8 /* TWServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWServer.swift; sourceTree = "<group>"; };
 		CEE063BE1C11486A007C02E9 /* TheWanted-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheWanted-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE063C11C11486A007C02E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +129,8 @@
 		75BC91B31C2533F1006972AE /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				752931931C2551CD003156BB /* UserNotification.swift */,
+				75DCB0991C2D7FCD00EE041F /* TWLocalPlayerNotification.swift */,
+				75DCB09C1C2D81EC00EE041F /* TWRemotePlayerNotification.swift */,
 			);
 			name = Constant;
 			sourceTree = "<group>";
@@ -149,51 +138,12 @@
 		75FBED381C2A45FB0056661E /* TWComponents */ = {
 			isa = PBXGroup;
 			children = (
-				75FBED421C2A7FA00056661E /* Constant */,
-				75FBED3F1C2A5EE00056661E /* Protocol */,
-				75FBED401C2A5F7E0056661E /* View */,
-				75FBED411C2A60E50056661E /* Manager */,
-				75FBED391C2A466B0056661E /* TWPlayer.swift */,
-				75E9771A1C2CBC5300E84344 /* TWMe.swift */,
 				CE7A6B4F1C1E917A009784A8 /* TWServer.swift */,
+				CE7A6B4E1C1E913A009784A8 /* Manager */,
+				CE2EFDD91C114BB700CB6F73 /* Model */,
+				75BC91B31C2533F1006972AE /* Constant */,
 			);
 			name = TWComponents;
-			sourceTree = "<group>";
-		};
-		75FBED3F1C2A5EE00056661E /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				75122BEF1C2B890D00D21AE6 /* TWNotificable.swift */,
-				75FBED361C2A44C50056661E /* TWActionable.swift */,
-				75122BED1C2B81C700D21AE6 /* TWSpawnable.swift */,
-				75FBED3D1C2A5ED40056661E /* TWMovable.swift */,
-			);
-			name = Protocol;
-			sourceTree = "<group>";
-		};
-		75FBED401C2A5F7E0056661E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CE2EFDDA1C114F1800CB6F73 /* TWPlayerMarkerView.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		75FBED411C2A60E50056661E /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				75FBED341C2A425C0056661E /* TWNotificableManager.swift */,
-			);
-			name = Manager;
-			sourceTree = "<group>";
-		};
-		75FBED421C2A7FA00056661E /* Constant */ = {
-			isa = PBXGroup;
-			children = (
-				75BC91B41C253427006972AE /* TWNotification.swift */,
-				75FBED3B1C2A5C810056661E /* TWAction.swift */,
-			);
-			name = Constant;
 			sourceTree = "<group>";
 		};
 		CE2EFDD61C114B6D00CB6F73 /* Support Files */ = {
@@ -219,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				75FBED321C29F1E20056661E /* MapView.swift */,
+				CE2EFDDA1C114F1800CB6F73 /* MapPlayerMarkerView.swift */,
 				CE2EFDDE1C128A9C00CB6F73 /* WheelView.swift */,
 				CE2EFDDC1C1281A000CB6F73 /* WheelActionButton.swift */,
 			);
@@ -228,8 +179,10 @@
 		CE2EFDD91C114BB700CB6F73 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE3B4EAD1C1E78410015A70E /* LatLonModel.swift */,
-				752931911C254F08003156BB /* PlayerModel.swift */,
+				CE3B4EAD1C1E78410015A70E /* TWGeoPoint.swift */,
+				75FBED391C2A466B0056661E /* TWPlayer.swift */,
+				75DCB0971C2D5CFB00EE041F /* TWLocalPlayer.swift */,
+				75DCB09E1C2D833400EE041F /* TWRemotePlayer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -237,8 +190,8 @@
 		CE7A6B4E1C1E913A009784A8 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				CE7A6B4C1C1E90AB009784A8 /* TWLocationManager.swift */,
-				7529318F1C254E7E003156BB /* SessionManager.swift */,
+				75FBED341C2A425C0056661E /* TWRemotePlayerManager.swift */,
+				75DCB0A01C2E071E00EE041F /* TWLocalPlayerManager.swift */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -270,12 +223,9 @@
 			children = (
 				CEE063C11C11486A007C02E9 /* AppDelegate.swift */,
 				CEE063C51C11486A007C02E9 /* Main.storyboard */,
-				75BC91B31C2533F1006972AE /* Constant */,
 				75FBED381C2A45FB0056661E /* TWComponents */,
-				CE2EFDD91C114BB700CB6F73 /* Model */,
-				CE2EFDD81C114BAD00CB6F73 /* View */,
 				CE2EFDD71C114BA500CB6F73 /* Controller */,
-				CE7A6B4E1C1E913A009784A8 /* Manager */,
+				CE2EFDD81C114BAD00CB6F73 /* View */,
 				CE2EFDD61C114B6D00CB6F73 /* Support Files */,
 			);
 			path = "TheWanted-iOS";
@@ -507,27 +457,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7A6B501C1E917A009784A8 /* TWServer.swift in Sources */,
-				75FBED3C1C2A5C810056661E /* TWAction.swift in Sources */,
 				CEE063CA1C11486A007C02E9 /* TheWanted_iOS.xcdatamodeld in Sources */,
-				75122BEE1C2B81C700D21AE6 /* TWSpawnable.swift in Sources */,
-				75BC91B51C253427006972AE /* TWNotification.swift in Sources */,
-				CE7A6B4D1C1E90AB009784A8 /* TWLocationManager.swift in Sources */,
 				CEE063C41C11486A007C02E9 /* MapViewController.swift in Sources */,
+				75DCB0A11C2E071E00EE041F /* TWLocalPlayerManager.swift in Sources */,
+				75DCB09F1C2D833400EE041F /* TWRemotePlayer.swift in Sources */,
 				CE2EFDDF1C128A9C00CB6F73 /* WheelView.swift in Sources */,
-				752931921C254F08003156BB /* PlayerModel.swift in Sources */,
-				75FBED371C2A44C50056661E /* TWActionable.swift in Sources */,
-				75E9771B1C2CBC5300E84344 /* TWMe.swift in Sources */,
-				75FBED351C2A425C0056661E /* TWNotificableManager.swift in Sources */,
+				75FBED351C2A425C0056661E /* TWRemotePlayerManager.swift in Sources */,
 				75FBED331C29F1E20056661E /* MapView.swift in Sources */,
 				CEE063C21C11486A007C02E9 /* AppDelegate.swift in Sources */,
-				CE2EFDDB1C114F1800CB6F73 /* TWPlayerMarkerView.swift in Sources */,
-				75122BF01C2B890D00D21AE6 /* TWNotificable.swift in Sources */,
-				752931941C2551CD003156BB /* UserNotification.swift in Sources */,
-				75FBED3E1C2A5ED40056661E /* TWMovable.swift in Sources */,
-				CE3B4EAE1C1E78410015A70E /* LatLonModel.swift in Sources */,
+				CE2EFDDB1C114F1800CB6F73 /* MapPlayerMarkerView.swift in Sources */,
+				CE3B4EAE1C1E78410015A70E /* TWGeoPoint.swift in Sources */,
 				CE2EFDDD1C1281A000CB6F73 /* WheelActionButton.swift in Sources */,
+				75DCB09D1C2D81EC00EE041F /* TWRemotePlayerNotification.swift in Sources */,
+				75DCB0981C2D5CFB00EE041F /* TWLocalPlayer.swift in Sources */,
+				75DCB09A1C2D7FCD00EE041F /* TWLocalPlayerNotification.swift in Sources */,
 				75FBED3A1C2A466B0056661E /* TWPlayer.swift in Sources */,
-				752931901C254E7E003156BB /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

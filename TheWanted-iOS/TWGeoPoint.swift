@@ -1,5 +1,5 @@
 //
-//  PointModel.swift
+//  TWGeoPoint.swift
 //  TheWanted-iOS
 //
 //  Created by rafael malheiros on 14/12/15.
@@ -10,18 +10,14 @@ import UIKit
 
 import CocoaLumberjack
 
-class LatLonModel: AnyObject {
+struct TWGeoPoint {
     
-    var lat: Double?
-    var lon: Double?
+    let lat: Double
+    let lon: Double
     
     init(lat:Double, lon:Double) {
         DDLogVerbose("PointModel.init(lat: \(lat), lon: \(lon))")
         self.lat = lat
         self.lon = lon
-    }
-    
-    init() {
-        DDLogVerbose("PointModel.init()")
     }
 }

@@ -8,15 +8,20 @@
 
 import UIKit
 
+import CocoaLumberjack
 
 class MapViewController: UIViewController {
 
+    
+    let distanceMultiplyer = 1000000.0
     
     let wheelView = WheelView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     
     let mapView = MapView()
     
-    let locationManager = TWLocationManager.sharedInstance
+    var localPlayer: TWLocalPlayer?
+    
+    var remotePlayerIdToMarkersDict = [String : MapPlayerMarkerView]()
     
     
     let notificationCenter = NSNotificationCenter.defaultCenter()
@@ -25,17 +30,23 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.startUpdatingLocation()
-        
-        
-        notificationCenter.addObserver(self, selector: "onSpawnableSpawn:", name: TWNotification.Spawn, object: nil)
-        
+        setupLocalPlayer()
         setupMapView()
         setupWheelView()
+        
+        notificationCenter.addObserver(self, selector: "onLocalPlayerConnect:", name: TWLocalPlayerNotification.Connect, object: nil)
+        notificationCenter.addObserver(self, selector: "onLocalPlayerMove:", name: TWLocalPlayerNotification.Move, object: nil)
+        
+        notificationCenter.addObserver(self, selector: "onRemotePlayerEnter:", name: TWRemotePlayerNotification.Enter, object: nil)
+//        notificationCenter.addObserver(self, selector: "onRemotePlayerLeave:", name: TWRemotePlayerNotification.Leave, object: nil)
+        notificationCenter.addObserver(self, selector: "onRemotePlayerMove:", name: TWRemotePlayerNotification.Move, object: nil)
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
-        locationManager.stopUpdatingLocation()
+        
+        //TODO: Tirar essa porra daqui
+        localPlayer?.stopUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,10 +95,95 @@ class MapViewController: UIViewController {
         
     }
     
-    @objc func onSpawnableSpawn(notification: NSNotification)
+    
+    
+    func setupLocalPlayer()
     {
-        let marker = (notification.object as! TWPlayer).marker
-        mapView.addMarker(marker)
+        self.localPlayer = TWLocalPlayerManager.sharedInstance.player
+        let marker = MapPlayerMarkerView()
+        mapView.addSubview(marker)
+    }
+    
+    
+    @objc func onLocalPlayerConnect(notification: NSNotification)
+    {
+        if self.localPlayer == nil {
+            setupLocalPlayer()
+        }
+    }
+    
+    
+    
+    @objc func onRemotePlayerEnter(notification: NSNotification)
+    {
+        DDLogVerbose("MapViewController.onRemotePlayerEnter()")
+        
+        let remotePlayer = notification.object as! TWRemotePlayer
+        let marker = MapPlayerMarkerView()
+        marker.playerId = remotePlayer.id
+        remotePlayerIdToMarkersDict[remotePlayer.id] = marker
+        
+        mapView.addSubview(marker)
+        
+        let singleFingerTap = UITapGestureRecognizer(target: self, action: "onTapMarker:")
+        marker.userInteractionEnabled = true
+        marker.addGestureRecognizer(singleFingerTap)
+    }
+    
+    
+    @objc func onLocalPlayerMove(notification: NSNotification)
+    {
+        DDLogVerbose("MapViewController.onLocalPlayerMove()")
+        
+        let remotePlayers = TWRemotePlayerManager.sharedInstance.players
+        
+        
+        let localLat = self.localPlayer!.position!.lat
+        let localLon = self.localPlayer!.position!.lon
+        
+        for (remotePlayerId, remotePlayer) in remotePlayers {
+            
+            let remoteLat = remotePlayer.position!.lat
+            let remoteLon = remotePlayer.position!.lon
+            
+            let relativeLat = remoteLat - localLat
+            let relativeLon = remoteLon - localLon
+            
+            let newX = relativeLon * distanceMultiplyer
+            let newY = -(relativeLat * distanceMultiplyer)
+            
+            let marker = remotePlayerIdToMarkersDict[remotePlayerId]
+            marker!.layer.position = CGPoint(x: newX, y: newY)
+        }
+    }
+    
+    
+    @objc func onRemotePlayerMove(notification: NSNotification)
+    {
+        DDLogVerbose("MapViewController.onRemotePlayerMove()")
+        
+        let remotePlayer = notification.object as! TWRemotePlayer
+        
+        let remoteLat = remotePlayer.position!.lat
+        let remoteLon = remotePlayer.position!.lon
+        
+        let localLat = self.localPlayer!.position!.lat
+        let localLon = self.localPlayer!.position!.lon
+        
+        let relativeLat = remoteLat - localLat
+        let relativeLon = remoteLon - localLon
+        
+        let newX = relativeLon * distanceMultiplyer
+        let newY = -(relativeLat * distanceMultiplyer)
+        
+        let marker = remotePlayerIdToMarkersDict[remotePlayer.id]
+        marker!.layer.position = CGPoint(x: newX, y: newY)
+    }
+    
+    
+    func onTapMarker(gestureRecognizer: UIGestureRecognizer) {
+        DDLogVerbose("MapViewController.onTapMarker()")
+        let marker = gestureRecognizer.view as! MapPlayerMarkerView
     }
 
 }

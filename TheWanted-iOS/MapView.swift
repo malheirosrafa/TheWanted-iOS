@@ -34,12 +34,4 @@ class MapView: UIView {
 //        self.layer.backgroundColor = UIColor.orangeColor().CGColor
     }
     
-    
-    
-    func addMarker(marker:UIView)
-    {
-        self.addSubview(marker)
-    }
-    
-    
 }

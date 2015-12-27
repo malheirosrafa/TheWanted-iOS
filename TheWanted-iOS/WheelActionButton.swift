@@ -13,10 +13,10 @@ import QuartzCore
 class WheelActionButton : UIButton {
     
     
-    // Mark: Properties
+    // Mark:- Properties
     
     
-    // Mark: Initialization
+    // Mark:- Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
