@@ -29,6 +29,7 @@ class TWRemotePlayerManager {
     private init()
     {
         noficationCenter.addObserver(self, selector: "onRemotePlayerEnter:", name: TWRemotePlayerNotification.Enter, object: nil)
+        noficationCenter.addObserver(self, selector: "onRemotePlayerLeave:", name: TWRemotePlayerNotification.Leave, object: nil)
     }
 
     
@@ -42,6 +43,15 @@ class TWRemotePlayerManager {
         
         let remotePlayer = notification.object as! TWRemotePlayer
         players[remotePlayer.id] = remotePlayer
+    }
+    
+    
+    @objc func onRemotePlayerLeave(notification: NSNotification)
+    {
+        DDLogVerbose("TWRemotePlayerManager.onRemotePlayerLeave")
+        
+        let remotePlayer = notification.object as! TWRemotePlayer
+        players[remotePlayer.id] = nil
     }
     
 }

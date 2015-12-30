@@ -55,7 +55,7 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>192.168.0.11.xip.io</key>
+			<key>192.168.0.5.xip.io</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>

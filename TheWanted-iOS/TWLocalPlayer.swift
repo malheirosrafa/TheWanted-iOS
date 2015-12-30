@@ -30,7 +30,6 @@ class TWLocalPlayer: TWPlayer, CLLocationManagerDelegate {
         self.locationManager.distanceFilter = 1
         
         self.notifyConnect()
-        //startUpdatingLocation()
     }
     
     
@@ -71,7 +70,7 @@ class TWLocalPlayer: TWPlayer, CLLocationManagerDelegate {
     {
         DDLogVerbose("TWLocalPlayer.locationManager(manager, didUpdateToLocation, fromLocation)")
         
-        let data:Dictionary<String, NSObject> = ["lat": newLocation.coordinate.latitude, "lon": newLocation.coordinate.longitude]
+        let data = ["lat": newLocation.coordinate.latitude, "lon": newLocation.coordinate.longitude]
         
         let newGeoPoint = TWGeoPoint(lat: newLocation.coordinate.latitude, lon: newLocation.coordinate.longitude)
         self.position = newGeoPoint
@@ -82,6 +81,17 @@ class TWLocalPlayer: TWPlayer, CLLocationManagerDelegate {
         self.socket.emit(TWLocalPlayerNotification.Move, data)
     }
     
+    
+    
+    func attack(remotePlayer:TWRemotePlayer)
+    {
+        DDLogVerbose("TWLocalPlayer.attack()")
+        
+        let data = ["id": remotePlayer.id]
+        
+        //TODO: Tirar essa porra daqui
+        self.socket.emit(TWLocalPlayerNotification.Attack, data)
+    }
     
     
     func notifyConnect()

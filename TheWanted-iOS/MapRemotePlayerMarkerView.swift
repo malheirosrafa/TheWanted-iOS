@@ -1,5 +1,5 @@
 //
-//  MapPlayerMarkerView.swift
+//  MapRemotePlayerMarkerView.swift
 //  TheWanted-iOS
 //
 //  Created by Rafael Malheiros on 04/12/15.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class MapPlayerMarkerView: UIView {
+class MapRemotePlayerMarkerView: UIView {
     
     
     var playerId: String?
+    
 
     let bgColor:UIColor = UIColor.init(red: 0.15, green: 0.34, blue: 0.20, alpha: 1.0)
     

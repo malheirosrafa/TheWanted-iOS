@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		58AD4A3E038C48AEA2B34844 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13DB61E6162F3174DBACA593 /* Pods.framework */; };
+		753863D31C319660004B727E /* MapLocalPlayerMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753863D21C319660004B727E /* MapLocalPlayerMarkerView.swift */; };
+		753863D51C31E636004B727E /* MapPlayerDamageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753863D41C31E636004B727E /* MapPlayerDamageView.swift */; };
 		75DCB0981C2D5CFB00EE041F /* TWLocalPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCB0971C2D5CFB00EE041F /* TWLocalPlayer.swift */; };
 		75DCB09A1C2D7FCD00EE041F /* TWLocalPlayerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCB0991C2D7FCD00EE041F /* TWLocalPlayerNotification.swift */; };
 		75DCB09D1C2D81EC00EE041F /* TWRemotePlayerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DCB09C1C2D81EC00EE041F /* TWRemotePlayerNotification.swift */; };
@@ -17,7 +19,7 @@
 		75FBED351C2A425C0056661E /* TWRemotePlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED341C2A425C0056661E /* TWRemotePlayerManager.swift */; };
 		75FBED3A1C2A466B0056661E /* TWPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FBED391C2A466B0056661E /* TWPlayer.swift */; };
 		79F279487D5E4BE27CF7D726 /* Pods_TheWanted_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BCE57AF7DF23EE16FE6571 /* Pods_TheWanted_iOS.framework */; };
-		CE2EFDDB1C114F1800CB6F73 /* MapPlayerMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFDDA1C114F1800CB6F73 /* MapPlayerMarkerView.swift */; };
+		CE2EFDDB1C114F1800CB6F73 /* MapRemotePlayerMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFDDA1C114F1800CB6F73 /* MapRemotePlayerMarkerView.swift */; };
 		CE2EFDDD1C1281A000CB6F73 /* WheelActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFDDC1C1281A000CB6F73 /* WheelActionButton.swift */; };
 		CE2EFDDF1C128A9C00CB6F73 /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFDDE1C128A9C00CB6F73 /* WheelView.swift */; };
 		CE3B4EAC1C1D3C760015A70E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3B4EAB1C1D3C760015A70E /* CoreLocation.framework */; };
@@ -56,6 +58,8 @@
 		26B19B6E82445A8CA4C08CD9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		30CC5D470E1557D0C2864208 /* Pods-TheWanted-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheWanted-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheWanted-iOS/Pods-TheWanted-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5721997E86FAC807DC14EA5F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		753863D21C319660004B727E /* MapLocalPlayerMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocalPlayerMarkerView.swift; sourceTree = "<group>"; };
+		753863D41C31E636004B727E /* MapPlayerDamageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPlayerDamageView.swift; sourceTree = "<group>"; };
 		75DCB0971C2D5CFB00EE041F /* TWLocalPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLocalPlayer.swift; sourceTree = "<group>"; };
 		75DCB0991C2D7FCD00EE041F /* TWLocalPlayerNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWLocalPlayerNotification.swift; sourceTree = "<group>"; };
 		75DCB09C1C2D81EC00EE041F /* TWRemotePlayerNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWRemotePlayerNotification.swift; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 		75FBED321C29F1E20056661E /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		75FBED341C2A425C0056661E /* TWRemotePlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWRemotePlayerManager.swift; sourceTree = "<group>"; };
 		75FBED391C2A466B0056661E /* TWPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWPlayer.swift; sourceTree = "<group>"; };
-		CE2EFDDA1C114F1800CB6F73 /* MapPlayerMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPlayerMarkerView.swift; sourceTree = "<group>"; };
+		CE2EFDDA1C114F1800CB6F73 /* MapRemotePlayerMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRemotePlayerMarkerView.swift; sourceTree = "<group>"; };
 		CE2EFDDC1C1281A000CB6F73 /* WheelActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelActionButton.swift; sourceTree = "<group>"; };
 		CE2EFDDE1C128A9C00CB6F73 /* WheelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 		CE3B4EAB1C1D3C760015A70E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -169,9 +173,11 @@
 			isa = PBXGroup;
 			children = (
 				75FBED321C29F1E20056661E /* MapView.swift */,
-				CE2EFDDA1C114F1800CB6F73 /* MapPlayerMarkerView.swift */,
+				CE2EFDDA1C114F1800CB6F73 /* MapRemotePlayerMarkerView.swift */,
+				753863D21C319660004B727E /* MapLocalPlayerMarkerView.swift */,
 				CE2EFDDE1C128A9C00CB6F73 /* WheelView.swift */,
 				CE2EFDDC1C1281A000CB6F73 /* WheelActionButton.swift */,
+				753863D41C31E636004B727E /* MapPlayerDamageView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -465,13 +471,15 @@
 				75FBED351C2A425C0056661E /* TWRemotePlayerManager.swift in Sources */,
 				75FBED331C29F1E20056661E /* MapView.swift in Sources */,
 				CEE063C21C11486A007C02E9 /* AppDelegate.swift in Sources */,
-				CE2EFDDB1C114F1800CB6F73 /* MapPlayerMarkerView.swift in Sources */,
+				CE2EFDDB1C114F1800CB6F73 /* MapRemotePlayerMarkerView.swift in Sources */,
 				CE3B4EAE1C1E78410015A70E /* TWGeoPoint.swift in Sources */,
+				753863D31C319660004B727E /* MapLocalPlayerMarkerView.swift in Sources */,
 				CE2EFDDD1C1281A000CB6F73 /* WheelActionButton.swift in Sources */,
 				75DCB09D1C2D81EC00EE041F /* TWRemotePlayerNotification.swift in Sources */,
 				75DCB0981C2D5CFB00EE041F /* TWLocalPlayer.swift in Sources */,
 				75DCB09A1C2D7FCD00EE041F /* TWLocalPlayerNotification.swift in Sources */,
 				75FBED3A1C2A466B0056661E /* TWPlayer.swift in Sources */,
+				753863D51C31E636004B727E /* MapPlayerDamageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

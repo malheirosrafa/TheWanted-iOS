@@ -19,7 +19,7 @@ class TWServer {
 
     static let sharedInstance = TWServer()
     
-    var socket:SocketIOClient = SocketIOClient(socketURL: "192.168.0.11.xip.io:3000", options: [.Log(false), .ForcePolling(true)])
+    var socket:SocketIOClient = SocketIOClient(socketURL: "192.168.0.5.xip.io:3000", options: [.Log(false), .ForcePolling(true)])
     
     
     
@@ -28,7 +28,7 @@ class TWServer {
     
     private init()
     {
-        DDLogVerbose("Api.init()")
+        DDLogVerbose("TWServer.init()")
         
         initSocketIO()
     }
@@ -36,19 +36,21 @@ class TWServer {
 
     deinit
     {
-        DDLogVerbose("Api.deinit")
+        DDLogVerbose("TWServer.deinit")
         socket.disconnect()
     }
     
     
     func initSocketIO()
     {
-        DDLogVerbose("Api.initSocketIO()");
+        DDLogVerbose("TWServer.initSocketIO()");
         
         self.socket.on("connect", callback: onConnect)
         
         self.socket.on(TWRemotePlayerNotification.Enter, callback: onRemotePlayerEnter)
+        self.socket.on(TWRemotePlayerNotification.Leave, callback: onRemotePlayerLeave)
         self.socket.on(TWRemotePlayerNotification.Move, callback: onRemotePlayerMove)
+        self.socket.on(TWRemotePlayerNotification.Damage, callback: onRemotePlayerDamage)
         
         socket.connect()
     }
@@ -60,7 +62,7 @@ class TWServer {
     
     func onConnect(data: [AnyObject], ack:SocketAckEmitter)
     {
-            DDLogVerbose("Api.onConnect()");
+            DDLogVerbose("TWServer.onConnect()");
         
             TWLocalPlayer(id: self.socket.sid!)
     }
@@ -69,7 +71,7 @@ class TWServer {
     
     func onRemotePlayerEnter(remotePlayerListData: [AnyObject], ack:SocketAckEmitter)
     {
-        DDLogVerbose("Api.onRemotePlayerEnter()");
+        DDLogVerbose("TWServer.onRemotePlayerEnter()")
         
         for remotePlayerData in remotePlayerListData {
             
@@ -80,9 +82,26 @@ class TWServer {
     }
     
     
+    func onRemotePlayerLeave(remotePlayerListData: [AnyObject], ack:SocketAckEmitter)
+    {
+        DDLogVerbose("TWServer.onRemotePlayerLeave()")
+        
+        for remotePlayerData in remotePlayerListData {
+            
+            if let id = remotePlayerData["id"] as? String {
+                
+                if let remotePlayer =  TWRemotePlayerManager.sharedInstance.players[id]
+                {
+                    remotePlayer.notifyLeave()
+                }
+            }
+        }
+    }
+    
+    
     func onRemotePlayerMove(remotePlayerListData: [AnyObject], ack:SocketAckEmitter)
     {
-        DDLogVerbose("Api.onRemotePlayerMove()");
+        DDLogVerbose("TWServer.onRemotePlayerMove()")
         
         for remotePlayerData in remotePlayerListData {
             
@@ -104,6 +123,20 @@ class TWServer {
                 
             }
             
+        }
+    }
+    
+    
+    func onRemotePlayerDamage(remotePlayerListData: [AnyObject], ack:SocketAckEmitter)
+    {
+        DDLogVerbose("TwServer.onRemotePlayerDamage()")
+        
+        for remotePlayerData in remotePlayerListData {
+        
+            guard let id = remotePlayerData["id"] as? String else { return }
+            guard let remotePlayer =  TWRemotePlayerManager.sharedInstance.players[id] else { return }
+            
+            remotePlayer.notifyDamage()
         }
     }
 }

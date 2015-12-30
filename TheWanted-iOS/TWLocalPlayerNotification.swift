@@ -11,4 +11,5 @@ struct TWLocalPlayerNotification
     static let Connect = "TWLocalPlayerNotification.Connect"
     static let Disconnect = "TWLocalPlayerNotification.Disconnect"
     static let Move = "TWLocalPlayerNotification.Move"
+    static let Attack = "TWLocalPlayerNotification.Attack"
 }

@@ -21,30 +21,32 @@ class MapViewController: UIViewController {
     
     var localPlayer: TWLocalPlayer?
     
-    var remotePlayerIdToMarkersDict = [String : MapPlayerMarkerView]()
+    var remotePlayerIdToMarkersDict = [String : MapRemotePlayerMarkerView]()
     
     
     let notificationCenter = NSNotificationCenter.defaultCenter()
     
     
     override func viewDidLoad() {
+        DDLogVerbose("MapViewController.viewDidLoad()")
         super.viewDidLoad()
         
         setupLocalPlayer()
         setupMapView()
-        setupWheelView()
+        //setupWheelView()
         
         notificationCenter.addObserver(self, selector: "onLocalPlayerConnect:", name: TWLocalPlayerNotification.Connect, object: nil)
         notificationCenter.addObserver(self, selector: "onLocalPlayerMove:", name: TWLocalPlayerNotification.Move, object: nil)
         
         notificationCenter.addObserver(self, selector: "onRemotePlayerEnter:", name: TWRemotePlayerNotification.Enter, object: nil)
-//        notificationCenter.addObserver(self, selector: "onRemotePlayerLeave:", name: TWRemotePlayerNotification.Leave, object: nil)
+        notificationCenter.addObserver(self, selector: "onRemotePlayerLeave:", name: TWRemotePlayerNotification.Leave, object: nil)
         notificationCenter.addObserver(self, selector: "onRemotePlayerMove:", name: TWRemotePlayerNotification.Move, object: nil)
+        notificationCenter.addObserver(self, selector: "onRemotePlayerDamage:", name: TWRemotePlayerNotification.Damage, object: nil)
         
     }
     
     override func viewWillDisappear(animated: Bool) {
-        
+        DDLogVerbose("MapViewController.viewWillDisappear()")
         //TODO: Tirar essa porra daqui
         localPlayer?.stopUpdatingLocation()
     }
@@ -55,7 +57,10 @@ class MapViewController: UIViewController {
     }
     
     
-    func setupMapView() {
+    func setupMapView()
+    {
+        DDLogVerbose("MapViewController.setupMapView()")
+        
         mapView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(mapView)
         
@@ -75,8 +80,10 @@ class MapViewController: UIViewController {
     }
 
     
-    func setupWheelView() {
-
+    func setupWheelView()
+    {
+        DDLogVerbose("MapViewController.setupWheelView()")
+        
         wheelView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(wheelView)
         
@@ -99,36 +106,26 @@ class MapViewController: UIViewController {
     
     func setupLocalPlayer()
     {
-        self.localPlayer = TWLocalPlayerManager.sharedInstance.player
-        let marker = MapPlayerMarkerView()
+        DDLogVerbose("MapViewController.setupLocalPlayer()")
+        
+        guard let localPlayer = TWLocalPlayerManager.sharedInstance.player else { return }
+        
+        guard self.localPlayer == nil else { return }
+        
+        
+        self.localPlayer = localPlayer
+        let marker = MapLocalPlayerMarkerView()
         mapView.addSubview(marker)
     }
     
     
     @objc func onLocalPlayerConnect(notification: NSNotification)
     {
-        if self.localPlayer == nil {
-            setupLocalPlayer()
-        }
+        DDLogVerbose("MapViewController.onLocalPlayerConnect()")
+        
+        setupLocalPlayer()
     }
     
-    
-    
-    @objc func onRemotePlayerEnter(notification: NSNotification)
-    {
-        DDLogVerbose("MapViewController.onRemotePlayerEnter()")
-        
-        let remotePlayer = notification.object as! TWRemotePlayer
-        let marker = MapPlayerMarkerView()
-        marker.playerId = remotePlayer.id
-        remotePlayerIdToMarkersDict[remotePlayer.id] = marker
-        
-        mapView.addSubview(marker)
-        
-        let singleFingerTap = UITapGestureRecognizer(target: self, action: "onTapMarker:")
-        marker.userInteractionEnabled = true
-        marker.addGestureRecognizer(singleFingerTap)
-    }
     
     
     @objc func onLocalPlayerMove(notification: NSNotification)
@@ -158,6 +155,40 @@ class MapViewController: UIViewController {
     }
     
     
+    
+    @objc func onRemotePlayerEnter(notification: NSNotification)
+    {
+        DDLogVerbose("MapViewController.onRemotePlayerEnter()")
+        
+        let remotePlayer = notification.object as! TWRemotePlayer
+        let marker = MapRemotePlayerMarkerView()
+        marker.playerId = remotePlayer.id
+        
+    
+        marker.userInteractionEnabled = true
+        let singleFingerTap = UITapGestureRecognizer(target: self, action: "onTapMarker:")
+        marker.addGestureRecognizer(singleFingerTap)
+        
+        mapView.addSubview(marker)
+        
+        remotePlayerIdToMarkersDict[remotePlayer.id] = marker
+    }
+    
+    
+    
+    @objc func onRemotePlayerLeave(notification: NSNotification)
+    {
+        DDLogVerbose("MapViewController.onRemotePlayerLeave()")
+        
+        let remotePlayer = notification.object as! TWRemotePlayer
+        
+        let marker = remotePlayerIdToMarkersDict[remotePlayer.id]
+        marker?.removeFromSuperview()
+        remotePlayerIdToMarkersDict[remotePlayer.id] = nil
+    }
+    
+    
+    
     @objc func onRemotePlayerMove(notification: NSNotification)
     {
         DDLogVerbose("MapViewController.onRemotePlayerMove()")
@@ -180,10 +211,28 @@ class MapViewController: UIViewController {
         marker!.layer.position = CGPoint(x: newX, y: newY)
     }
     
+    @objc func onRemotePlayerDamage(notification: NSNotification)
+    {
+        DDLogVerbose("MapViewController.onRemotePlayerDamage()")
+        
+        let remotePlayer = notification.object as! TWRemotePlayer
+        
+        
+        let damageIndicator = MapPlayerDamageView()
+        damageIndicator.center = remotePlayerIdToMarkersDict[remotePlayer.id]!.center
+        damageIndicator.text = "100"
+        mapView.addSubview(damageIndicator)
+    }
     
-    func onTapMarker(gestureRecognizer: UIGestureRecognizer) {
+    
+    func onTapMarker(gestureRecognizer: UIGestureRecognizer)
+    {
         DDLogVerbose("MapViewController.onTapMarker()")
-        let marker = gestureRecognizer.view as! MapPlayerMarkerView
+        
+        let marker = gestureRecognizer.view as! MapRemotePlayerMarkerView
+        let remotePlayer = TWRemotePlayerManager.sharedInstance.players[marker.playerId!]
+        
+        localPlayer?.attack(remotePlayer!)
     }
 
 }

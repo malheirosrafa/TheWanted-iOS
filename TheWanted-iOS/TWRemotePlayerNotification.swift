@@ -11,4 +11,5 @@ struct TWRemotePlayerNotification
     static let Enter = "TWRemotePlayerNotification.Enter"
     static let Leave = "TWRemotePlayerNotification.Leave"
     static let Move = "TWRemotePlayerNotification.Move"
+    static let Damage = "TWRemotePlayerNotification.Damage"
 }

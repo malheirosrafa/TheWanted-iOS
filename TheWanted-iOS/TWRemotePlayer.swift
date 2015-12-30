@@ -46,4 +46,11 @@ class TWRemotePlayer: TWPlayer{
         
         notificationCenter.postNotificationName(TWRemotePlayerNotification.Move, object: self)
     }
+    
+    func notifyDamage()
+    {
+        DDLogVerbose("TWRemotePlayer.notifyDamage()")
+        
+        notificationCenter.postNotificationName(TWRemotePlayerNotification.Damage, object: self)
+    }
 }
